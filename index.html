@@ -7,19 +7,32 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="gameCanvas"></canvas>
-  
-  <!-- Cards Section -->
-  <div id="cards">
-    <div class="card" draggable="true" data-card="Knight">Knight<br>(3 Elixir)</div>
-    <div class="card" draggable="true" data-card="Archers">Archers<br>(3 Elixir)</div>
-    <div class="card" draggable="true" data-card="Giant">Giant<br>(5 Elixir)</div>
-  </div>
+  <div class="game-container">
+    <canvas id="gameCanvas"></canvas>
+    
+    <div class="side-panel">
+      <div id="elixir-bar-container">
+        <div id="elixir-bar">
+          <div id="elixir-progress"></div>
+        </div>
+        <div id="elixir-text">5/10</div>
+      </div>
 
-  <!-- Elixir Bar -->
-  <div id="elixir-bar">
-    <div id="elixir-progress"></div>
-    <span id="elixir-text">5</span>
+      <div id="cards-container">
+        <div class="card" draggable="true" data-card="Knight">
+          <div class="card-name">Knight</div>
+          <div class="card-elixir">3</div>
+        </div>
+        <div class="card" draggable="true" data-card="Archers">
+          <div class="card-name">Archers</div>
+          <div class="card-elixir">3</div>
+        </div>
+        <div class="card" draggable="true" data-card="Giant">
+          <div class="card-name">Giant</div>
+          <div class="card-elixir">5</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="main.js"></script>
