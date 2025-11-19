@@ -5,66 +5,147 @@
 }
 
 body {
-  font-family: sans-serif;
-  background: linear-gradient(to bottom, #87ceeb, #009688);
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.game-container {
+  display: flex;
+  gap: 20px;
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+  border: 3px solid #444;
+  background: linear-gradient(to bottom, #87ceeb 0%, #009688 50%, #00695c 100%);
+  display: block;
+  touch-action: none;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 120px;
+}
+
+/* Elixir Bar */
+#elixir-bar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  gap: 10px;
 }
 
-/* Game canvas */
-canvas {
-  border: 2px solid black;
-  margin-top: 20px;
-}
-
-/* Cards View */
-#cards {
+#elixir-bar {
+  width: 40px;
+  height: 300px;
+  border: 3px solid #333;
+  background: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  flex-direction: column-reverse;
+}
+
+#elixir-progress {
+  width: 100%;
+  background: linear-gradient(to top, #9c27b0, #673ab7);
+  height: 50%;
+  transition: height 0.1s;
+}
+
+#elixir-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Cards */
+#cards-container {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
 .card {
-  width: 80px;
-  height: 120px;
-  background-color: lightgray;
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  border: 3px solid #333;
   border-radius: 8px;
-  border: 2px solid black;
-  text-align: center;
-  padding: 10px;
+  padding: 8px;
+  cursor: grab;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Elixir Bar */
-#elixir-bar {
-  width: 300px;
-  height: 30px;
-  border: 2px solid black;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: #555;
-  margin-top: 10px;
-  position: relative;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-#elixir-progress {
-  height: 100%;
-  background-color: purple;
-  width: 50%; /* Initial elixir progress */
-  transition: width 0.5s;
+.card:active {
+  cursor: grabbing;
 }
 
-#elixir-text {
-  position: absolute;
-  top: 4px;
-  left: 140px;
-  color: white;
+.card-name {
   font-weight: bold;
+  font-size: 12px;
+  color: #333;
+}
+
+.card-elixir {
+  background: #9c27b0;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #elixir-bar-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #elixir-bar {
+    width: 200px;
+    height: 30px;
+    flex-direction: row;
+  }
+
+  #cards-container {
+    flex-direction: row;
+  }
 }
