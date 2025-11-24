@@ -21,14 +21,14 @@ let gameState = {
 // Building positions (Clash Royale layout)
 const buildingPositions = {
   player: [
-    { x: 80, y: 500, size: 50, isKing: false, maxHp: 1000 },      // Left Crown Tower
-    { x: 270, y: 500, size: 50, isKing: false, maxHp: 1000 },     // Right Crown Tower
-    { x: 175, y: 420, size: 60, isKing: true, maxHp: 3000 },      // King Tower
+    { x: 80, y: 420, size: 50, isKing: false, maxHp: 1000 },      // Left Crown Tower
+    { x: 270, y: 420, size: 50, isKing: false, maxHp: 1000 },     // Right Crown Tower
+    { x: 175, y: 500, size: 60, isKing: true, maxHp: 3000 },      // King Tower
   ],
   enemy: [
-    { x: 80, y: 50, size: 50, isKing: false, maxHp: 1000 },       // Left Crown Tower
-    { x: 270, y: 50, size: 50, isKing: false, maxHp: 1000 },      // Right Crown Tower
-    { x: 175, y: 130, size: 60, isKing: true, maxHp: 3000 },      // King Tower
+    { x: 80, y: 130, size: 50, isKing: false, maxHp: 1000 },       // Left Crown Tower
+    { x: 270, y: 130, size: 50, isKing: false, maxHp: 1000 },      // Right Crown Tower
+    { x: 175, y: 50, size: 60, isKing: true, maxHp: 3000 },      // King Tower
   ],
 };
 
